@@ -1,9 +1,11 @@
 # Markdown + Mermaid tutorial
         
 **Table of Contents**
-1. [Basic Syntax](#1-basic-syntax)
-2. [Extended Syntax](#2-extended-syntax)
-3. [Mermaid](#3-mermaid)
+- [Markdown + Mermaid tutorial](#markdown--mermaid-tutorial)
+  - [1. Basic Syntax](#1-basic-syntax)
+  - [8. Horizontal rule: --- (triple -)](#8-horizontal-rule-----triple--)
+  - [2. Extended Syntax](#2-extended-syntax)
+  - [3. Mermaid](#3-mermaid)
 
 ## 1. Basic Syntax
 1. Headings: #, ##, ###
@@ -11,7 +13,6 @@
     - Bold: **bold** (double *)
     - Italic: *italic* (single *)
     - Bold & italic: ***bold and italic*** (triple *)
-    - Strikethrough: ~~strikethrough~~ (double ~)
 3. Block quote: >
 > The Difference Between Stupidity and Genius Is That Genius Has Its Limits. <br> &mdash; ***Albert Einstein***
 4. Lists
@@ -38,42 +39,58 @@
 8. Horizontal rule: --- (triple -)
 ---
 
-
-
 ## 2. Extended Syntax
-- 
-- Fenced code block (with syntax highlighting): \`\`\` [language]
+1. Table: 
+    - --- (3+ hyphens) for header; 
+    - | (pipe) to separate column;
+    - : (colon) to align;
+
+    | name | school |
+    | :---  | ---:    |
+    | Claire | Luce |
+    | Panelope | Kennedy |
+2. Fenced code block (with syntax highlighting): \`\`\` [language]
     ```typescript
     let x = 5;
     console.log(x ** 2);
     ```
-
+3. Strikethrough: ~~strikethrough~~ (double ~)
+4. Highlighting: \(<mark\></mark\>\) <br>
+   These text are <mark>highlighted</mark>:
+5. Task list: - \[x\] your text
+    - [x] feed cat
+    - [x] watch movie
+    - [ ] go to bed
+6. Subscript: \(<sub\></sub\>\) <br>
+   H<sub>2</sub>O
+7. Superscript:\(<sup\></sup\>\) <br>
+   X<sup>2</sup>
 
 ## 3. Mermaid
-
 1. Install 'Markdown Preview Mermaid Support' VSC extension
-2. Format text
-    - headings: #, ##, ### (multiple #)
-    - italic: *italic* (single *)
-    - bold: **bold** (double *)
-    - strike-through: ~~strikethrough~~ (double ~)
-    - bold and italic: ***bold and italic*** (triple *)
-3. Blockquote
-    > We shall not flag or fail. We shall go on to the end. We shall fight in France, we shall fight on the seas and oceans, we shall fight with 
-    growing confidence and growing strength in the air. We shall defend our island, whatever the cost may be. We shall fight on the beaches, we 
-    shall fight on the landing-grounds, we shall fight in the fields and in the streets, we shall fight in the hills. We shall never surrender!
-    <br> &mdash; ***Winston Churchill***
-
-    > Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.
-    <br> &mdash; ***Albert Einstein***
-4. Lists
-    - ordered list: 1. 2. 3. 4. (number .)
-    - unordered list: - (hyphen)
-
+2. Flowchart
 ```mermaid
-graph TD;
-    A-->B
-    A-->C;
-    B-->D;
-    C-->D;
+graph TB;
+    Home-->DT["Data Structure"]
+    Home-->Add
+    Add-->Submit
+    Submit-->Details
+    Details-->Edit
+    Details-->Delete   
+    Edit-->Submit
+    Home-->List
+    List-->Select
+    Select-->Edit
+    Select-->Delete
+    Select-->Details
+```
+3. Class
+```mermaid
+classDiagram
+    class Policy
+    Policy: +string policyNumber
+    Policy: +date policyEffectiveDate
+    Policy: +Building[] buildingArray
+    Policy: +countBuildings()
+    Policy: +TIV()
 ```
